@@ -25,18 +25,28 @@ public class Module1Tests {
     @Test
     public void test1() throws InterruptedException, IOException {
         webDriver.get("https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos");
+        String previousVal = "";
         for (int i = 0; i <= 10000000; i++) {
             String dateTime = new SimpleDateFormat("EEE dd-MM-yyyy HH:mm:ss.SSS Z").format(new Date());
-            webDriver.navigate().refresh();
+            if(i>0){
+                webDriver.navigate().refresh();
+            }
+
             new WebDriverWait(webDriver, Duration.ofSeconds(10)).
                     until(ExpectedConditions.textToBePresentInElement(module1Page.getSubscribersCount(),
                             "subscribers"));
             String[] content = module1Page.getSubscribersCount().getText().split("subscribers");
-            System.out.println(dateTime + ", " + content[0].trim() + ", " + "subscribers");
+            System.out.println(dateTime + ", " + content[0].trim
+                    () + ", " + "subscribers");
+
+            if(!previousVal.equalsIgnoreCase(content[0].trim()) ){
+                previousVal = content[0].trim();
+                TextFileUtility.appendContentToTextFile(dateTime + ", " + content[0].trim() + ", " + "subscribers");
+            }
+
             Thread.sleep(900000);//Every 15 mins
-            webDriver.navigate().refresh();
-            TextFileUtility.appendContentToTextFile(dateTime + ", " + content[0].trim() + ", " + "subscribers");
-        }
+            //webDriver.navigate().refresh();
+       }
 
     }
 
