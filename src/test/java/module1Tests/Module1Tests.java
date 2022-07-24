@@ -26,7 +26,8 @@ public class Module1Tests {
     public void test1() throws InterruptedException, IOException {
         webDriver.get("https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos");
         String previousVal = "";
-        for (int i = 0; i <= 10000000; i++) {
+        int i = 0;
+        while(true){
             String dateTime = new SimpleDateFormat("EEE dd-MM-yyyy HH:mm:ss.SSS Z").format(new Date());
             if(i>0){
                 webDriver.navigate().refresh();
@@ -41,11 +42,11 @@ public class Module1Tests {
 
             if(!previousVal.equalsIgnoreCase(content[0].trim()) ){
                 previousVal = content[0].trim();
-                TextFileUtility.appendContentToTextFile(dateTime + ", " + content[0].trim() + ", " + "subscribers");
+                TextFileUtility.appendContentToTextFile(dateTime + ", " + content[0].trim() + ", " + "subscribers - kundabaddalu2.0");
             }
 
             Thread.sleep(900000);//Every 15 mins
-            //webDriver.navigate().refresh();
+
        }
 
     }
