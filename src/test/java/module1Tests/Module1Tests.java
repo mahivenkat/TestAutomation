@@ -44,7 +44,7 @@ public class Module1Tests {
                 previousVal = content[0].trim();
                 TextFileUtility.appendContentToTextFile(dateTime + ", " + content[0].trim() + ", " + "subscribers - kundabaddalu2.0");
             }
-
+            i = i+1;
             Thread.sleep(900000);//Every 15 mins
 
        }
