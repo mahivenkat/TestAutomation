@@ -14,7 +14,6 @@ public class WebDriverUtility {
                 if(webDriver == null){
                     System.setProperty("webdriver.chrome.driver","C:\\Users\\Deepak Dontineni\\Downloads\\chromedriver_win32\\chromedriver.exe");
                     webDriver = new ChromeDriver();
-
                 }
             }
         }
