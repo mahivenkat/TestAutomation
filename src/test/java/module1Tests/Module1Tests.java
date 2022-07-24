@@ -38,7 +38,7 @@ public class Module1Tests {
                             "subscribers"));
             String[] content = module1Page.getSubscribersCount().getText().split("subscribers");
             System.out.println(dateTime + ", " + content[0].trim
-                    () + ", " + "subscribers");
+                    () + ", " + "subscribers - kundabaddalu2.0");
 
             if(!previousVal.equalsIgnoreCase(content[0].trim()) ){
                 previousVal = content[0].trim();
