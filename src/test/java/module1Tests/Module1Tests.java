@@ -1,27 +1,31 @@
 package module1Tests;
 
 
+import libraries.ApiUtility;
+import libraries.JsonUtility;
 import libraries.TextFileUtility;
 import libraries.WebDriverUtility;
-import org.apache.groovy.json.internal.Exceptions;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pageObjects.Module1Page;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Module1Tests {
     WebDriver webDriver = WebDriverUtility.getInstance();
     Module1Page module1Page = PageFactory.initElements(webDriver, Module1Page.class);
-
+    ApiUtility apiUtility = new ApiUtility();
     @Test
     public void test1() throws InterruptedException, IOException {
         webDriver.get("https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos");
@@ -54,6 +58,9 @@ public class Module1Tests {
     @Test
     public void test2() {
         System.out.println("Test2");
+        apiUtility.getApi("https://reqres.in/api/users?page=2");
+//        apiUitlity.verifyResponse(apiUitlity.getResponse(),"","");
+        System.out.println(apiUtility.getResponse().jsonPath().getList("data").get(0).toString());
     }
 
     @Test
@@ -64,10 +71,23 @@ public class Module1Tests {
     @Test
     public void test4() {
         System.out.println("Test4");
+        JSONObject jsonObject = JsonUtility.readJsonFile(System.getProperty("user.dir")+"\\src\\test\\resources\\TestData\\Module1Jons\\createUser.json");
+        jsonObject.put("name","venkat");
+        Map headers = new HashMap();
+        headers.put("Content-Type", "application/json");
+
+        apiUtility.postApi("https://reqres.in/api/users",headers, jsonObject.toJSONString());
+        System.out.println(apiUtility.getResponse().prettyPrint());
     }
 
     @AfterClass
     public void closeBrowser() {
         WebDriverUtility.getInstance().quit();
+    }
+
+    @AfterMethod
+    public void closeBr(){
+        WebDriverUtility.getInstance().quit();
+
     }
 }
