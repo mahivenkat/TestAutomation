@@ -17,12 +17,12 @@ app1:
     deleteAccountEndPoint:
 app2:
   credentials:
-    username: devapp1username1
-    password: devapp1password1
+    username: devapp2username1
+    password: devapp2password1
   database:
-    username: devapp1dbusername1
-    password: devapp1dbpassword
-    server: https://devapp1db/server
+    username: devapp2dbusername1
+    password: devapp2dbpassword
+    server: https://devapp2db/server
   accountApi:
     server:
     apiUserName:
