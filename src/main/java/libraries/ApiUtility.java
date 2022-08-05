@@ -37,16 +37,38 @@ public class ApiUtility {
         if(!headers.isEmpty()) {
             requestSpecification.headers(headers); // Add the Json to the body of the request
         }
-        requestSpecification.basePath("");
-        requestSpecification.baseUri("");
+//        requestSpecification.basePath("");
+//        requestSpecification.baseUri("");
 //        requestSpecification.params(null);
-        requestSpecification.pathParams(null);
-        requestSpecification.queryParams(null);
-        requestSpecification.relaxedHTTPSValidation();
+//        requestSpecification.pathParams(null);
+//        requestSpecification.queryParams(null);
+//        requestSpecification.relaxedHTTPSValidation();
         requestSpecification.body(reqBody); // Post the request and check the response
         setResponse(getRequestSpecification().when().post(url));
         return getResponse();
     }
+
+    public Response putApi(String url, Map headers, String reqBody){
+        // Add a header stating the Request body is a JSON
+        if(!headers.isEmpty()) {
+            requestSpecification.headers(headers); // Add the Json to the body of the request
+        }
+//        requestSpecification.basePath("");
+//        requestSpecification.baseUri("");
+//        requestSpecification.params(null);
+//        requestSpecification.pathParams(null);
+//        requestSpecification.queryParams(null);
+//        requestSpecification.relaxedHTTPSValidation();
+        requestSpecification.body(reqBody); // Post the request and check the response
+        setResponse(getRequestSpecification().when().put(url));
+        return getResponse();
+    }
+
+    public Response deleteApi(String url){
+        setResponse(getRequestSpecification().when().delete(url));
+        return getResponse();
+    }
+
 
     public void verifyStatusCode(Response response, int statusCode) {
         response.then().assertThat().statusCode(statusCode);

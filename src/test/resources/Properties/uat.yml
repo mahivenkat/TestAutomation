@@ -1,0 +1,19 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+app1:
+  credentials:
+    username: devapp1username1
+    password: devapp1password1
+  database:
+    username: devapp1dbusername1
+    password: devapp1dbpassword
+    server: https://devapp1db/server
+app2:
+  credentials:
+    username: devapp2username1
+    password: devapp2password1
+  database:
+    username: devapp2dbusername1
+    password: devapp2dbpassword
+    server: https://devapp2db/server
