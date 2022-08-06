@@ -11,15 +11,13 @@ public class BaseTest {
     private CommonUtility commonUtility = new CommonUtility();
     private AppPropertiesModel appPropertiesModel;
     public BaseTest() {
+        this.driver = new WebDriverUtility().getInstance();
     }
 
     public WebDriver getDriver() {
         return driver;
     }
 
-    public void setDriver() {
-        this.driver = new WebDriverUtility().getInstance();
-    }
 
     public AppPropertiesModel getAppPropertiesModel() {
         return appPropertiesModel;

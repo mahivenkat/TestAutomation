@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverUtility {
-    private WebDriver webDriver;
-    public WebDriver getInstance(){
+    private static WebDriver webDriver;
+    public static WebDriver getInstance(){
         if(webDriver == null){
             synchronized (Singleton.class){
                 if(webDriver == null){

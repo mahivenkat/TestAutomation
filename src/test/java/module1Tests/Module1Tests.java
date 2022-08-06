@@ -34,7 +34,7 @@ public class Module1Tests extends BaseTest {
         webDriver.get("https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos");
         String previousVal = "";
         int i = 0;
-        while (true) {
+        if (true) {
             String dateTime = new SimpleDateFormat("EEE dd-MM-yyyy HH:mm:ss.SSS Z").format(new Date());
             if (i > 1) {
                 webDriver.navigate().refresh();
