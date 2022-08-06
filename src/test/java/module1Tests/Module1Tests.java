@@ -1,10 +1,10 @@
 package module1Tests;
 
 
+import base.BaseTest;
 import libraries.ApiUtility;
 import libraries.JsonUtility;
 import libraries.TextFileUtility;
-import libraries.WebDriverUtility;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -23,10 +23,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Module1Tests {
-    WebDriver webDriver = WebDriverUtility.getInstance();
+public class Module1Tests extends BaseTest {
+    WebDriver webDriver = super.getDriver();
     Module1Page module1Page = PageFactory.initElements(webDriver, Module1Page.class);
     ApiUtility apiUtility = new ApiUtility();
+
 
     @Test
     public void test_gui() throws InterruptedException, IOException {
@@ -92,7 +93,7 @@ public class Module1Tests {
 
         apiUtility.putApi("https://reqres.in/api/users", headers, jsonObject.toJSONString());
         System.out.println(apiUtility.getResponse().prettyPrint());
-        Assert.assertTrue(apiUtility.getResponse().statusCode()==201, "Verifying the put api statu code");
+        Assert.assertTrue(apiUtility.getResponse().statusCode() == 201, "Verifying the put api statu code");
 
     }
 
@@ -101,16 +102,17 @@ public class Module1Tests {
         System.out.println("Delete api test");
         apiUtility.deleteApi("https://reqres.in/api/users/839");
         System.out.println(apiUtility.getResponse().prettyPrint());
-        Assert.assertTrue(apiUtility.getResponse().statusCode()==204, "Verifying the delete api statu code");
+        Assert.assertTrue(apiUtility.getResponse().statusCode() == 204, "Verifying the delete api statu code");
     }
+
     @AfterClass
     public void closeBrowser() {
-        WebDriverUtility.getInstance().quit();
+        super.getDriver().quit();
     }
 
     @AfterMethod
     public void closeBr() {
-        WebDriverUtility.getInstance().quit();
+        super.getDriver().quit();
 
     }
 }
