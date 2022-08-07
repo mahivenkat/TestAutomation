@@ -13,7 +13,7 @@ public class Module1ApiTests {
     ApiUtility apiUtility = new ApiUtility();
 
 
-    @Test(priority = 0)
+    @Test(priority = 0, groups = {"Regression"})
     public void test_postApi() {
         System.out.println(Thread.currentThread().getId());
         System.out.println("Test post api");
@@ -26,7 +26,7 @@ public class Module1ApiTests {
         System.out.println(apiUtility.getResponse().prettyPrint());
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = {"Smoke", "Regression"})
     public void test_getApi() {
         System.out.println("reading param directly from maven cli: " + System.getProperty("param1"));
 
@@ -37,7 +37,7 @@ public class Module1ApiTests {
         System.out.println(apiUtility.getResponse().jsonPath().getList("data").get(0).toString());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = {"Regression"})
     public void test_putApi() {
         System.out.println(Thread.currentThread().getId());
 
@@ -53,7 +53,7 @@ public class Module1ApiTests {
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = {"Regression"})
     public void test_deleteApi() {
         System.out.println(Thread.currentThread().getId());
         System.out.println("Delete api test");
