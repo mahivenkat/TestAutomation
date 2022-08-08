@@ -5,12 +5,22 @@ public class AppProperties{
     @Override
     public String toString() {
         return "{" +
-                "credentials=" + credentials +
+                "url='" + url + '\'' +
+                ", credentials=" + credentials +
                 ", database=" + database +
                 ", accountApi=" + accountApi +
                 '}';
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    private String url;
     private CredentialsInfo credentials;
     private DatabaseInfo database;
     private ApiInfo accountApi;

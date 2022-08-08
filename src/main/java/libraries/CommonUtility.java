@@ -11,10 +11,10 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class CommonUtility {
-    public AppPropertiesModel readYml()  {
+    public AppPropertiesModel readPropertiesYml()  {
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Properties\\dev.yml"));
+            inputStream = new FileInputStream(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Properties\\"+System.getProperty("envName", "dev").toLowerCase()+".yml"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

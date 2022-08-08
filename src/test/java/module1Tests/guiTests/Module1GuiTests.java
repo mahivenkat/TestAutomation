@@ -1,10 +1,9 @@
 package module1Tests.guiTests;
 
 
-import libraries.ApiUtility;
-import libraries.JsonUtility;
-import libraries.TextFileUtility;
-import libraries.WebDriverUtility;
+import libraries.*;
+import models.appProperties.AppPropertiesModel;
+import org.checkerframework.checker.units.qual.C;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -26,11 +25,19 @@ public class Module1GuiTests {
     WebDriver webDriver = WebDriverUtility.getInstance();
     Module1Page module1Page = PageFactory.initElements(webDriver, Module1Page.class);
 
+    CommonUtility commonUtility = new CommonUtility();
+
+    AppPropertiesModel appPropertiesModel;
+
+    public Module1GuiTests(){
+         appPropertiesModel = commonUtility.readPropertiesYml();
+    }
 
 
     @Test
     public void test_gui() throws InterruptedException, IOException {
-        webDriver.get("https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos");
+
+        webDriver.get(appPropertiesModel.getApp1().getUrl());
         String previousVal = "";
         int i = 0;
         if (i==0) {

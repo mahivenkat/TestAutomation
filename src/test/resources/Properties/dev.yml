@@ -1,5 +1,6 @@
 # Define the jobs we want to run for this project
 app1:
+  url: https://www.youtube.com/channel/UCc79Etb6d6ISwCN4SeQgEJA/videos
   credentials:
     username: devapp1username1
     password: devapp1password1
@@ -11,10 +12,10 @@ app1:
     server:
     apiUserName:
     apiPassword:
-    createAccountEndPoint:
-    updateAccountEndPoint:
-    getAccountEndPoint:
-    deleteAccountEndPoint:
+    createAccountEndPoint: https://reqres.in/api/users
+    updateAccountEndPoint: https://reqres.in/api/users/
+    getAccountEndPoint: https://reqres.in/api/users?page=
+    deleteAccountEndPoint: https://reqres.in/api/users/
 app2:
   credentials:
     username: devapp2username1

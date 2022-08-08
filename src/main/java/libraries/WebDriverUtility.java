@@ -10,8 +10,16 @@ public class WebDriverUtility {
         if(webDriver == null){
             synchronized (Singleton.class){
                 if(webDriver == null){
-                    System.setProperty("webdriver.chrome.driver","C:\\Users\\Deepak Dontineni\\me\\untitled\\BrowserDrivers\\chromedriver.exe");
-                    webDriver = new ChromeDriver();
+                    if(System.getProperty("browserName", "chrome222").equalsIgnoreCase("chrome")) {
+                        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Deepak Dontineni\\me\\untitled\\BrowserDrivers\\chromedriver.exe");
+                        webDriver = new ChromeDriver();
+                    }
+                    if(System.getProperty("browserName").equalsIgnoreCase("firefox")) {
+
+                    }
+                    if(System.getProperty("browserName").equalsIgnoreCase("ie")) {
+
+                    }
                 }
             }
         }

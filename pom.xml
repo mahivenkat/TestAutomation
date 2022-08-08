@@ -18,7 +18,11 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <!--suppress UnresolvedMavenProperty -->
-    <prop>${param1}</prop>
+    <envToRun>${envName}</envToRun>
+    <!--suppress UnresolvedMavenProperty -->
+    <testsToRunOnBrowser>${browserName}</testsToRunOnBrowser>
+    <!--suppress UnresolvedMavenProperty -->
+    <testngXmlFile>${testngXmlFileName}</testngXmlFile>
   </properties>
 
   <dependencies>
@@ -123,7 +127,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <configuration>
             <suiteXmlFiles>
-              <suiteXmlFile>${prop}</suiteXmlFile>
+              <suiteXmlFile>${testngXmlFile}</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
           <version>2.22.1</version>
