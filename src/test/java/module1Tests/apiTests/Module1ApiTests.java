@@ -44,13 +44,14 @@ public class Module1ApiTests {
         System.out.println(apiUtility.getResponse().jsonPath().getList("data").get(0).toString());
     }
 
-    @Test(priority = 2, groups = {"Regression"})
+    @Test(priority = 2, groups = {"Regression"}, retryAnalyzer = RetryAnalyzer.class)
     public void test_putApi() {
         System.out.println(Thread.currentThread().getId());
 
         System.out.println("Test put api");
         JSONObject jsonObject = JsonUtility.readJsonFile(System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\Module1Jons\\createUser.json");
         jsonObject.put("name", "venkat");
+        jsonObject.put("job", "leader");
         Map headers = new HashMap();
         headers.put("Content-Type", "application/json");
 
@@ -60,7 +61,7 @@ public class Module1ApiTests {
 
     }
 
-    @Test(priority = 3, groups = {"Regression"})
+    @Test(priority = 3, groups = {"Regression"}, retryAnalyzer = RetryAnalyzer.class)
     public void test_deleteApi() {
         System.out.println(Thread.currentThread().getId());
         System.out.println("Delete api test");
