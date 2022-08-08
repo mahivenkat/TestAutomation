@@ -6,10 +6,10 @@
         <classes>
             <class name="module1Tests.apiTests.Module1ApiTests">
                 <methods>
-<!--                    <include name="test_postApi"/>-->
+                    <include name="test_postApi"/>
                     <include name="test_getApi"/>
-<!--                    <include name="test_putApi"/>-->
-<!--                    <include name="test_deleteApi"/>-->
+                    <include name="test_putApi"/>
+                    <include name="test_deleteApi"/>
                 </methods>
             </class>
         </classes>
