@@ -1,4 +1,4 @@
-package module1Tests.apiTests;
+package module1Tests;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

@@ -1,9 +1,11 @@
-package module1Tests.apiTests;
+﻿package module1Tests.apiTests;
 
 import libraries.ApiUtility;
 import libraries.CommonUtility;
 import libraries.JsonUtility;
 import models.appProperties.AppPropertiesModel;
+
+import module1Tests.RetryAnalyzer;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -61,7 +63,7 @@ public class Module1ApiTests {
 
     }
 
-    @Test(priority = 3, groups = {"Regression"}, retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority = 3, groups = {"Regression"}, retryAnalyzer=RetryAnalyzer.class)
     public void test_deleteApi() {
         System.out.println(Thread.currentThread().getId());
         System.out.println("Delete api test");
