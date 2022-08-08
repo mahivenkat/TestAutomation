@@ -128,6 +128,7 @@
           <configuration>
             <suiteXmlFiles>
               <suiteXmlFile>${testngXmlFile}</suiteXmlFile>
+<!--              <suiteXmlFile>src\test\resources\TestNgTests\module1TestNgTests\Module1AllTestNg.xml</suiteXmlFile>-->
             </suiteXmlFiles>
           </configuration>
           <version>2.22.1</version>

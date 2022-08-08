@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="100">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Deepak Dontineni/me/untitled/src/test/java/module1Tests/apiTests/Module1ApiTests.java">
+        <classes>
+            <class name="module1Tests.guiTests.Module1GuiTests"></class>
+        </classes>
+    </test>
+</suite>
