@@ -1,0 +1,32 @@
+# Define the jobs we want to run for this project
+app1:
+  credentials:
+    username: qaapp1username1
+    password: qaapp1password1
+  database:
+    username: qaapp1dbusername1
+    password: qaapp1dbpassword
+    server: https://qaapp1db/server
+  accountApi:
+    server:
+    apiUserName:
+    apiPassword:
+    createAccountEndPoint:
+    updateAccountEndPoint:
+    getAccountEndPoint:
+    deleteAccountEndPoint:
+app2:
+  credentials:
+    username: qaapp2username1
+    password: qaapp2password1
+  database:
+    username: qaapp2dbusername1
+    password: qaapp2dbpassword
+    server: https://qaapp2db/server
+  accountApi:
+    server:
+    apiUserName:
+    apiPassword:
+    createAccountEndPoint:
+    getAccountEndPoint: pppppppppppppp
+    deleteAccountEndPoint:
