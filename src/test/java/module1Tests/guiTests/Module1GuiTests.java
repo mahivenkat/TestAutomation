@@ -40,7 +40,7 @@ public class Module1GuiTests {
         webDriver.get(appPropertiesModel.getApp1().getUrl());
         String previousVal = "";
         int i = 0;
-        if (i==0) {
+        if (true) {
             String dateTime = new SimpleDateFormat("EEE dd-MM-yyyy HH:mm:ss.SSS Z").format(new Date());
             if (i > 1) {
                 webDriver.navigate().refresh();
