@@ -1,9 +1,6 @@
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class SampleJavaProagrams {
+public class SampleJavaPrograms {
     public static void main(String[] args) {
         System.out.println("starts.............");
 //        reverseString();
@@ -13,7 +10,9 @@ public class SampleJavaProagrams {
 //        findRepetitiveCharsInString();
 //        sortArrayWithoutUsingSortMethod();
 
-        sortArrayWithUsingSortMethod();
+//        sortArrayWithUsingSortMethod();
+//        nthMaxInArray();
+        isPrime();
     }
 
 
@@ -87,14 +86,38 @@ public class SampleJavaProagrams {
                 mapper.put(Character.toLowerCase(chArray[i]), mapper.get(Character.toLowerCase(chArray[i]))+1);
             }
         }
+//
+//        Integer [] valuesArray = mapper.values();
+//        Arrays.sort(valuesArray);
+//        System.out.println(Arrays.toString(valuesArray));
+//        System.out.println(mapper.values());
+//        mapper.values().stream().sorted();
+//        System.out.println(mapper.values());
+//        System.out.println(mapper.values().getClass());
+
 
         int maxValueInMap = (Collections.max(mapper.values()));
         System.out.println(maxValueInMap);
+
+
+        ArrayList<Integer> tt = new ArrayList<>(mapper.values());
+        Collections.sort(tt);
+        System.out.println(tt);
+
+        for(int a = 0; a< tt.size(); a++){
+            for(int b = a+1; b<tt.size(); b++){
+                if(tt.get(a)<tt.get(b)){
+//                    tt.get(a) =00;
+                }
+            }
+        }
+        System.out.println(tt);
+
         for( HashMap.Entry<Character, Integer> entry : mapper.entrySet() ){
 
-            if(entry.getValue().equals(2)){
-                System.out.println("Key for value " + 2 + " is: " + entry.getKey());
-                break;
+            if(entry.getValue().equals(1)){
+                System.out.println("Key for value " +entry.getValue() + " is: " + entry.getKey());
+               // break;
             }
         }
 
@@ -120,7 +143,6 @@ public class SampleJavaProagrams {
         }
         }
 
-
     public static void sortArrayWithUsingSortMethod(){
 //        int arr [] = new int[]{1,3,43333,599,2992};
         Integer arr [] = {3,22,2,333993};
@@ -135,6 +157,58 @@ public class SampleJavaProagrams {
 
 
 
+    }
+//to do
+    static public void nthMaxInArray(){
+        int [] arr = new int[]{2,3,2, 3893,22,3,93939,233};
+        System.out.println("Given Array: " + Arrays.toString(arr));
+//        Arrays.sort(arr);
+//        System.out.println("Sorted method:  "+ Arrays.toString(arr));
+        int counter = 0;
+        HashMap<Integer, Integer> mapper = new HashMap<>();
+        for(int i = 0; i<arr.length; i++){
+            if(mapper.get(arr[i])==null){
+                mapper.put(arr[i], 1);
+            }
+            for(int j=i+1; j<arr.length; j++){
+//                mapper.computeIfAbsent(arr[i], k -> counter + 1);
+                int tmp = 0;
+                if (arr[i]>=arr[j]){
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j]=tmp;
+                    if(arr[i]==arr[j]){
+                        mapper.put(arr[i], mapper.get(arr[i])+1);
+                    }
+                }
+            }
+
+        }
+
+        System.out.println("sorted with calcs: " + Arrays.toString(arr));
+        System.out.println(mapper.toString());
+    }
+
+    static public void isPrime(){
+        int i, number, count;
+
+        System.out.println(" Prime Numbers from 1 to 100 are : ");
+        for(number = 1; number <= 100; number++)
+        {
+            count = 0;
+            for (i = 2; i <= number/2; i++)
+            {
+                if(number % i == 0)
+                {
+                    count++;
+                    break;
+                }
+            }
+            if(count == 0 && number != 1 )
+            {
+                System.out.print(number + " ");
+            }
+        }
     }
 
 }
