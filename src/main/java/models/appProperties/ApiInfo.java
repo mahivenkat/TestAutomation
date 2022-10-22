@@ -1,20 +1,7 @@
 package models.appProperties;
 
 public class ApiInfo {
-    @Override
-    public String toString() {
-        return "{" +
-                "server='" + server + '\'' +
-                ", apiUserName='" + apiUserName + '\'' +
-                ", apiPassword='" + apiPassword + '\'' +
-                ", createAccountEndPoint='" + createAccountEndPoint + '\'' +
-                ", updateAccountEndPoint='" + updateAccountEndPoint + '\'' +
-                ", getAccountEndPoint='" + getAccountEndPoint + '\'' +
-                ", deleteAccountEndPoint='" + deleteAccountEndPoint + '\'' +
-                '}';
-    }
-
-    private String server;
+     private String server;
     private String apiUserName;
     private String apiPassword;
     private String createAccountEndPoint;
@@ -29,6 +16,7 @@ public class ApiInfo {
     public void setDeleteAccountEndPoint(String deleteAccountEndPoint) {
         this.deleteAccountEndPoint = deleteAccountEndPoint;
     }
+
 
     public String getGetAccountEndPoint() {
         return getAccountEndPoint;
@@ -78,4 +66,17 @@ public class ApiInfo {
         this.server = server;
     }
     // Getters and setters
+    @Override
+    public String toString() {
+        return "{" +
+                "server='" + server + '\'' +
+                ", apiUserName='" + apiUserName + '\'' +
+                ", apiPassword='" + apiPassword + '\'' +
+                ", createAccountEndPoint='" + createAccountEndPoint + '\'' +
+                ", updateAccountEndPoint='" + updateAccountEndPoint + '\'' +
+                ", getAccountEndPoint='" + getAccountEndPoint + '\'' +
+                ", deleteAccountEndPoint='" + deleteAccountEndPoint + '\'' +
+                '}';
+    }
+
 }

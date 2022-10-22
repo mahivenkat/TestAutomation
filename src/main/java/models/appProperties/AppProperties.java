@@ -2,15 +2,6 @@ package models.appProperties;
 
 public class AppProperties{
 
-    @Override
-    public String toString() {
-        return "{" +
-                "url='" + url + '\'' +
-                ", credentials=" + credentials +
-                ", database=" + database +
-                ", accountApi=" + accountApi +
-                '}';
-    }
 
     public String getUrl() {
         return url;
@@ -48,4 +39,17 @@ public class AppProperties{
     public void setAccountApi(ApiInfo accountApi) {
         this.accountApi = accountApi;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "url='" + url + '\'' +
+                ", credentials=" + credentials +
+                ", database=" + database +
+                ", accountApi=" + accountApi +
+                '}';
+    }
+
 }
+
+

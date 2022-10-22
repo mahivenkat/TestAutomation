@@ -3,13 +3,6 @@ package models.appProperties;
 public class CredentialsInfo {
     private String username;
 
-    @Override
-    public String toString() {
-        return "{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 
     private String password;
 
@@ -28,4 +21,14 @@ public class CredentialsInfo {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+
 }

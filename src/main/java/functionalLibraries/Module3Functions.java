@@ -1,4 +1,4 @@
-package modules;
+package functionalLibraries;
 import org.testng.annotations.Test;
 public class Module3Functions {
 

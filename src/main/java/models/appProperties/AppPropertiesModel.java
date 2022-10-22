@@ -5,13 +5,6 @@ public class AppPropertiesModel
 
     private AppProperties app1;
 
-    @Override
-    public String toString() {
-        return "{" +
-                "app1=" + app1 +
-                ", app2=" + app2 +
-                '}';
-    }
 
     public AppProperties getApp2() {
         return app2;
@@ -29,5 +22,14 @@ public class AppPropertiesModel
     public void setApp1(AppProperties app1) {
         this.app1 = app1;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "app1=" + app1 +
+                ", app2=" + app2 +
+                '}';
+    }
+
 }
 

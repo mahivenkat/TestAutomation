@@ -1,14 +1,7 @@
 package models.appProperties;
 
 public class DatabaseInfo {
-    @Override
-    public String toString() {
-        return "{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", server='" + server + '\'' +
-                '}';
-    }
+
 
     private String username;
     private String password;
@@ -38,4 +31,12 @@ public class DatabaseInfo {
         this.server = server;
     }
     // Getters and setters
+    @Override
+    public String toString() {
+        return "{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", server='" + server + '\'' +
+                '}';
+    }
 }
