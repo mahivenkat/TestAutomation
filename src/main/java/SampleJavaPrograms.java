@@ -181,7 +181,7 @@ public class SampleJavaPrograms {
     }
 
     static public void nthMaxInArray(){
-        int [] arr = new int [] {2, 3, 2, 3893, 22, 3, 93939, 233};
+        int [] arr = new int [] {2, 3, 2, 2, 3893, 22, 3, 93939, 233};
         System.out.println("Before sort: " + Arrays.toString(arr));
 
 
