@@ -2,6 +2,6 @@ Instructions:
 Hello
 kdkdkdkdk
 // To run Maven on a Windows agent, use
-//bat "cd C:\\Users\\Venkat\\Downloads\\apache-maven-3.8.6-bin\\apache-maven-3.8.6\\bin & mvn clean test -f \"C:\\Users\\Deepak Dontineni\\me\\untitled\\pom.xml\""
+//bat "cd C:\\Users\\Venkat\\Downloads\\apache-maven-3.8.6-bin\\apache-maven-3.8.6\\bin & mvn clean test -f \"C:\\Users\\Venkat\\me\\untitled\\pom.xml\""
 // bat "\"C:\\Users\\Venkat\\Downloads\\apache-maven-3.8.6-bin\\apache-maven-3.8.6\\bin\\mvn\" clean test"
 bat "mvn clean test -f pom.xml -DtestngXmlFileName=src\\test\\resources\\TestNgTests\\module1TestNgTests\\Module1AllTestNg.xml -DbrowserName=Chrome -DenvName=dev"
